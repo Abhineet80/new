@@ -1,1 +1,245 @@
-Hi
+exp 5
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c
+$ cd exp2
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (newbranch)
+$ git branch
+  master
+* newbranch
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (newbranch)
+$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        s.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (newbranch)
+$ git checkout master --f
+Switched to branch 'master'
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ nano five.txt
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        five.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git add .
+warning: in the working copy of 'five.txt', LF will be replaced by CRLF the next time Git touches it
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git commit -m"collaboration"
+[master 26339f6] collaboration
+ 1 file changed, 1 insertion(+)
+ create mode 100644 five.txt
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git remote add origin
+usage: git remote add [<options>] <name> <url>
+
+    -f, --[no-]fetch      fetch the remote branches
+    --[no-]tags           import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --[no-]track <branch>
+                          branch(es) to track
+    -m, --[no-]master <branch>
+                          master branch
+    --[no-]mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git remote add origin https://github.com/Abhineet80/new
+error: remote origin already exists.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ ls
+five.txt  master.txt  r.txt  s.txt  t.txt
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push add origin
+error: src refspec origin does not match any
+error: failed to push some refs to 'add'
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master
+remote: Repository not found.
+fatal: repository 'https://github.com/Abhineet80/new/' not found
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master --f
+error: ambiguous option: f (could be --force-if-includes or --follow-tags)
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]repo <repository>
+                          repository
+    --[no-]all            push all branches
+    --[no-]branches       alias of --all
+    --[no-]mirror         mirror all refs
+    -d, --[no-]delete     delete refs
+    --[no-]tags           push tags (can't be used with --all or --branches or --mirror)
+    -n, --[no-]dry-run    dry run
+    --[no-]porcelain      machine-readable output
+    -f, --[no-]force      force updates
+    --[no-]force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --[no-]force-if-includes
+                          require remote updates to be integrated locally
+    --[no-]recurse-submodules (check|on-demand|no)
+                          control recursive pushing of submodules
+    --[no-]thin           use thin pack
+    --[no-]receive-pack <receive-pack>
+                          receive pack program
+    --[no-]exec <receive-pack>
+                          receive pack program
+    -u, --[no-]set-upstream
+                          set upstream for git pull/status
+    --[no-]progress       force progress reporting
+    --[no-]prune          prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --verify              opposite of --no-verify
+    --[no-]follow-tags    push missing but relevant tags
+    --[no-]signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --[no-]atomic         request atomic transaction on remote side
+    -o, --[no-]push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git remote add origin https://github.com/Abhineet80/new
+error: remote origin already exists.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git pull origin master
+remote: Repository not found.
+fatal: repository 'https://github.com/Abhineet80/new/' not found
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git remote add origin https://github.com/Abhineet80/new.git
+error: remote origin already exists.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master
+remote: Repository not found.
+fatal: repository 'https://github.com/Abhineet80/new/' not found
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git remote add origin https://github.com/Abhineet80/new.git
+error: remote origin already exists.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master
+remote: Permission to Abhineet80/new.git denied to Danuwarad.
+fatal: unable to access 'https://github.com/Abhineet80/new/': The requested URL returned error: 403
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git remote add origin https://github.com/Abhineet80/new.git
+error: remote origin already exists.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master
+To https://github.com/Abhineet80/new
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Abhineet80/new'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master
+To https://github.com/Abhineet80/new
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Abhineet80/new'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master -f
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.02 KiB | 1.02 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Abhineet80/new
+ + 24b46e2...26339f6 master -> master (forced update)
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git pull origin master
+From https://github.com/Abhineet80/new
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git fetch origin
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git fetch origin master
+From https://github.com/Abhineet80/new
+ * branch            master     -> FETCH_HEAD
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git fetch origin master
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 12 (delta 2), reused 12 (delta 2), pack-reused 0 (from 0)
+Unpacking objects: 100% (12/12), 801 bytes | 2.00 KiB/s, done.
+From https://github.com/Abhineet80/new
+ * branch            master     -> FETCH_HEAD
+ + 26339f6...c143cdd master     -> origin/master  (forced update)
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ ls
+five.txt  master.txt  r.txt  s.txt  t.txt
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master -f
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.02 KiB | 1.02 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Abhineet80/new
+ + c143cdd...26339f6 master -> master (forced update)
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ ls
+five.txt  master.txt  r.txt  s.txt  t.txt
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$ git push origin master -f
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.02 KiB | 1.02 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Abhineet80/new
+ + c143cdd...26339f6 master -> master (forced update)
+
+BLDEA-CSE@DESKTOP-OTRTNFF MINGW64 /c/exp2 (master)
+$
+
